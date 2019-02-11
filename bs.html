@@ -1,0 +1,155 @@
+<html>
+    <head></head>
+    <body>
+    <div class="lefteyebrow">
+          <svg id = "mysvg" version="1.0" xmlns="http://www.w3.org/2000/svg" id="eyebrowsvg"
+          width="1000.000000pt" height="1050.000000pt" viewBox="0 0 1000.000000 1000.000000"
+          preserveAspectRatio="xMidYMid meet" style="">
+          
+          <g  id="eyebrowleft" transform="translate(0.000000,0.000000) scale(.100000,0.100000)" style="fill:#ffffff;opacity:1;stroke:red;stroke-width:4;" >
+          <path d="M465 469 c-73 11 -180 61 -261 123 -75 56 -184 171 -184 193 0 17 -9 23 101 -60 83 -63 206 -122 309 -148 239 -61 533 36 844 278 88 69 112 75 144 38 21 -25 24 -35 19 -79 -5 -40 -12 -55 -33 -71 -15 -11 -56 -44 -93 -73 -120 -95 -289 -169 -460 -197 -93 -16 -299 -18 -398 -4z"/>
+          </g>
+          <circle class="EndPoint" cx="0" cy=" -1.8" r="1" />
+          </svg>
+</div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script>
+     //     var svg = document.querySelector('svg'),
+    //path = document.createElementNS('http://www.w3.org/2000/svg','path');
+//svg.appendChild(path);
+console.log($( "#mysvg" ).find("path").attr('d'))
+var a=$("#mysvg").find("path").attr('d')
+/*var array=[];
+for(var i=0;i<a.length;i++)
+{
+          if(a.isInteger(a[i]))
+             array.push(a[i]);  
+}*/
+
+
+
+
+
+var b="465 469 -73 11 -180 61 -261 123 -75 56 -184 171 -184 193 0 17 -9 23 101 -60 83 -63 206 -122 309 -148 239 -61 533 36 844 278 88 69 112 75 144 38 21 -25 24 -35 19 -79 -5 -40 -12 -55 -33 -71 -15 -11 -56 -44 -93 -73 -120 -95 -289 -169 -460 -197 -93 -16 -299 -18 -398 -4z"
+var array=b.split(" ");
+var arrayX=[parseInt(array[0])];
+var arrayX1=[array[0]]
+var arrayY=[parseInt(array[1])];
+for(var i=2;i<array.length;i++)
+{
+          if(i%2==0)
+         {
+          arrayX.push(parseInt(array[i])+parseInt(arrayX[0]));
+          arrayX1.push(parseInt(array[i]))
+}
+          else
+          arrayY.push(parseInt(array[i])+parseInt(arrayY[0]));
+}
+var x0=Math.max.apply(null,arrayX1);
+var c=    arrayX1.slice(0,arrayX1.indexOf(x0))
+for (var j=0; j<c.length;j++)
+c[j]=Math.abs(c[j])
+var x1=   Math.min.apply(null,c);
+//console.log(x0);
+//console.log(arrayX1.indexOf(x0));
+
+
+console.log(c);
+console.log(x1)
+//console.log(array);
+//console.log(arrayX);
+console.log(arrayX1);
+//console.log(arrayY);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ar=[];
+var count=0;
+//increase height
+/*for(var j=0;j<array.length;j++)
+{
+          if(j%2==0)
+         {
+          if(count<8)
+          {
+                    ar.push(parseInt(arrayX[j])+1);
+                    count++;
+          }
+          else
+          ar.push(parseInt(arrayX[j]));
+          }
+}
+var array2=[];
+j=0;
+k=0;
+for(var i=0;i<array.length;i++)
+{
+          if(i%2==0)
+          {
+                    array2.push(ar[j]);
+                    j++;
+          }
+          else
+          {
+                    array2.push(ar[k]);
+                    k++;
+          }
+
+}
+
+/*var t="M"+array2[0]+" "+array2[1]+"C"+array2;
+$("#mysvg").find("path").attr('d',t);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var absPath = Snap.path.toAbsolute(a);
+//console.log(abspath);
+
+
+
+/*
+function toabs() { // To absolute coordinates
+  var absPath = Snap.path.toAbsolute(a);
+  document.getElementById('t2').value = absPath;
+  path.setAttribute('d', absPath);
+}*/
+
+
+
+
+
+
+    </script>
+    </body>
+</html>
